@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Graph Drawing Contest Tool</title>
+    <link type="text/css" rel="stylesheet" href="stylesheets/main.css"/>
+    <link type="text/css" rel="stylesheet" href="stylesheets/svg.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script data-main="scripts/mincrossings/main" src="scripts/require.js"></script>
+</head>
+<body>
+
+<div class="main">
+    <h1>Graph Drawing Contest Tool</h1>
+    <input id="file-input" type="file" name="name" style="display: none;" />
+    <br/>
+    <div id='toolcontainer' class="toolcontainer">
+        <div id='svgcontainer' class="svgcontainer"></div>
+        <div id='textfieldcontainer' class="textfieldcontainer disabled"></div>
+    </div>
+    <br/>
+    <br/>
+    <!--
+    <input type='button' value='Clear' onclick='clearDebug();'/>
+    <p id='debug'>
+    </p>
+    -->
+</div>
+
+<p>
+Features:
+<ol><li> GUI
+    <ol><li> Resize the GUI: Drag the button bottom-right.</li>
+        <li>Information (top right), left to right:
+            <ol><li>Grid granularity. Shows the difference between the coordinates between two grid lines.</li>
+                <li>Min angle: Shows the current minimum angle in the drawing. While dragging a node, is colored green if the minimum angle increased and red if it decreased. If there is an overlap in the graph, the box is highlighted and says "overlap".</li>
+            </ol></li>
+        <li>Buttons (top left), left to right:
+            <ol><li>Toggle Pan Mode: Dragging moves the drawing instead of creating a selection box.</li>
+                <li>Open File: Opens a graph file from your file system.</li>
+                <li>Save File: Saves a graph to your file system.</li>
+                <li>Copy Graph String: Opens a text field that contains the graph string, attempts to copy it to your clipboard. While the graph string is shown, the rest of the interface is disabled. Click the "Done" button to return to the interface.</li>
+                <li>Paste Graph String: Opens a text field that contains the graph string, attempts to paste from your clipboard. While the text field is shown, the rest of the interface is disabled. Click the "Cancel" button to return to the interface or the "Load" button to load the pasted string. If there is an error or warning, it is displayed in the console. If nothing happens when pressing "Load", then there is probably an error.</li>
+                <li>Load from Server: Hover the text field to show a list of graph files stored on the server. Click the button to load that graph.</li>
+                <li>Undo: undo the previous movement. Stores all movements on the current graph and shows the number of undos you can do while hovering. Selections don't change, only the nodes move.</li>
+                <li>Redo: redo the previous undo. Stores all 'undos' until there is a new movement. Shows the number of redos you can do while hivering.</li>
+            </ol></li>
+        <li>Sliders
+            <ol><li>Zooming: The slider on the right lets you zoom in and out of the drawing.</li>
+                <li>Node size: The slider on the bottom lets you change the size of the nodes.</li>
+
+            </ol></li></ol></li>
+    <li>Graph Drawing
+        <ol><li>Grid: The grid is shown with the displayed granularity (see 1.2.1), but nodes also snap to "invisible" grid points.</li>
+            <li>Graph highlighting
+                <ol><li>The two edges that have the minimum angle are highlighted with a blue halo.</li>
+                    <li>If there are overlaps, the corresponding nodes and edges are highlighted with a red halo.</li>
+                    <li>The hovered node is highlighted</li>
+                    <li>Selected nodes are highlighted by an orange dotted halo.</li></ol></li>
+            <li>Translation: Use Alt+Drag somewhere in the drawing (not on a node) to move the drawing</li>
+            <li>Zooming: Use the mouse wheel to zoom the drawing, or use the buttons and the slider on the right.
+            <li>Selection:
+                <ol><li>Click a node to clear the selection and select the node.</li>
+                    <li>Shift-Click a node to add it to the current selection.</li>
+                    <li>Ctrl-Click a node to remove it from the current selection.</li>
+                    <li>Box selection: Create a box by clicking somewhere in the drawing (not on a node) with no modifier, shift modifier, or ctrl modifier. Nodes in the selection are highlighted, then added or removed according to 2.5.1-2.5.3.</li>
+                    <li>Clicking somewhere in the drawing area (not on a node) clears the selection.</li></ol></li>
+            <li>Moving nodes: Dragging a node that is in the current selection moves all vertices from the selection. Dragging a node that is not in the current selection clears the selection and drags only this node.</li>
+        </ol></li>
+</ol>
+</p>
+<p>
+    &copy; <a href="https://algo.uni-trier.de" target="_blank">Philipp Kindermann</a> 2022
+</p>
+<p>
+    <a href="https://icomoon.io/#preview-free" target="_blank">Icons</a> by IcoMoon (<a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL</a> / <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>)
+</p>
+</body>

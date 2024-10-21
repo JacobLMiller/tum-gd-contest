@@ -1,0 +1,502 @@
+h1 {
+    text-align: center;
+}
+
+.toolcontainer {
+    margin: 0 auto;
+    position: relative;
+}
+
+.svgcontainer, .textfieldcontainer {
+    margin: 0 auto;
+    position: absolute;
+}
+
+.svgtool {
+    overflow: visible;
+}
+
+.textfieldcontainer {
+    z-index: 1;
+}
+
+.disabled {
+    display: none;
+}
+
+.textfield {
+    resize: none;
+}
+
+.copypopup {
+    position: absolute;
+    z-index: 2;
+    -webkit-transition: 1.5s linear all;
+    transition: 1.5s linear all;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.popuphide {
+    opacity: 0;
+}
+/*
+ GRAPH DRAWING
+*/
+
+.node {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke: black;
+    fill: #8da0cb;
+}
+
+.nodeHover {
+    fill: skyblue;
+}
+
+.nodeHighlight {
+    stroke: none;
+    fill: skyblue;
+}
+
+.nodeHighlightWrong {
+    stroke: none;
+    fill: salmon;
+}
+
+.nodeSelect {
+    stroke: #ff7500;
+    /*stroke-width: 4.3px;
+    stroke-dasharray: 1.4px;
+    stroke-opacity: 0.5;*/
+    fill: none;
+}
+
+.node .nodeClickArea {
+    stroke: none;
+    fill: none;
+}
+
+.bend {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke: black;
+    fill: #8dcba0;
+}
+
+.bendHover {
+    fill: lime;
+}
+
+.bendHighlight {
+    stroke: none;
+    fill: lime;
+}
+
+.bendHighlightWrong {
+    stroke: none;
+    fill: salmon;
+}
+
+.bendSelect {
+    stroke: #ff7500;
+    /*stroke-width: 4.3px;
+    stroke-dasharray: 1.4px;
+    stroke-opacity: 0.5;*/
+    fill: none;
+}
+
+.bend .nodeClickArea {
+    stroke: none;
+    fill: none;
+}
+
+.qualitytext {
+    font-family: sans-serif;
+    font-size: 20px;
+    stroke: none;
+    fill: black;
+    font-weight: bold;
+}
+
+.qualitytextEqual {
+    fill: #3F4B64;
+}
+
+.qualitytextBetter {
+    fill: green;
+}
+
+.qualitytextWorse {
+    fill: red;
+}
+
+.gridline {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 1;
+    stroke: lightgray;
+    opacity: 0.5;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHighlight {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 8;
+    stroke: orange;
+    opacity: 0.85;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHighlightQuality {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 8;
+    stroke: #8dcba0;
+    opacity: 0.9;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHighlightQuality2 {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 8;
+    stroke: orange;
+    opacity: 0.7;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHighlightWrong {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 8;
+    stroke: salmon;
+    opacity: 0.85;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHighlightMaxBends {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 8;
+    stroke: mediumpurple;
+    opacity: 0.85;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeSelect {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 10;
+    stroke: lime;
+    opacity: 0.85;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeNormal {
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width: 1.6;
+    stroke: black;
+    fill: none;
+    pointer-events: none;
+}
+
+.edgeHalo {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3.9;
+    fill: none;
+    pointer-events: none;
+    stroke: white;
+}
+
+
+/*
+ STROKE COLORS
+*/
+
+.strokeBlue {
+    stroke: blue;
+}
+
+.strokeLightBlue {
+    stroke: #8da0cb;
+}
+
+.strokeLightRed {
+    stroke: #fc8d62;
+}
+
+.strokeRed {
+    stroke: red;
+}
+
+.strokeGreen {
+    stroke: green;
+}
+
+.strokeNone {
+    stroke: none;
+}
+
+.strokeWhite {
+    stroke: white;
+}
+
+.strokeBlack {
+    stroke: black;
+}
+
+/*
+ STROKE WIDTHS
+*/
+
+.stokeThin {
+    stroke-width: 1;
+    stroke-linecap:round;stroke-linejoin:round;
+}
+
+.strokeThin {
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.strokeMedium {
+    stroke-width: 2;
+    stroke-linecap:round;stroke-linejoin:round;
+}
+
+.strokeHeavy {
+    stroke-width: 4.5;
+    stroke-linecap:round;stroke-linejoin:round;
+}
+
+.dropdown .option, .dropdown .dropdownline {
+    display:none;
+}
+.dropdown:hover .option, .dropdown:hover .dropdownline {
+    display:unset;
+}
+.dropdown {
+    cursor:pointer;
+}
+
+.optiontext {
+    fill: #3F4B64;
+    pointer-events: none;
+}
+
+
+.icon, .iconFat {
+    fill: #3F4B64;
+    pointer-events: none;
+    opacity: .85;
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.icon {
+    stroke: none;
+}
+
+.iconFat {
+    stroke: #3F4B64;
+}
+
+.borderRect {
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke:#3F4B64;
+    fill: #8da0cb;
+    opacity: 0.6;
+}
+
+.guiRect, .guiRectClickable, .guiRectInactive, .qualityRect, .guiRectToggled {
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke:#3F4B64;
+}
+/*
+.guiRectClickable, .guiRectInactive {
+    filter: url(#small-shadow);
+}*/
+
+.guiRect, .guiRectClickable {
+    fill:#ffffff;
+}
+
+.optiontext, .tooltipText, .qualitytext {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.tooltipText {
+    font-size: 15px;
+    fill: #3F4B64;
+    pointer-events: none;
+}
+
+.tooltipRect {
+    stroke-width: 1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke:black;
+    fill:lightyellow;
+}
+
+.dropdownline {
+    stroke-width: 2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke:#3F4B64;
+}
+
+.selectionBox {
+    stroke          : gray;
+    stroke-dasharray: 4px;
+    stroke-opacity  : 0.5;
+    fill            : transparent;
+}
+
+.disableRect {
+    stroke: none;
+    fill: lightGray;
+    opacity: 0.5;
+}
+
+.textfieldbutton {
+    float:right;
+    margin: 10px 0 0 5px;
+    font-size: 16px;
+}
+
+
+/* SLIDER */
+
+.ticks {
+    font: 10px sans-serif;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+    stroke-linecap: round;
+}
+
+.track {
+    stroke: #000;
+    stroke-opacity: 0.3;
+    stroke-width: 10px;
+}
+
+.track-inset {
+    stroke: #ddd;
+    stroke-width: 8px;
+}
+
+.track-overlay {
+    pointer-events: stroke;
+    stroke-width: 50px;
+    stroke: transparent;
+    cursor: pointer;
+}
+
+.handle {
+    fill: #fff;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1.25px;
+}
+
+OL { counter-reset: item }
+LI { display: block }
+LI:before { content: counters(item, ".") ") "; counter-increment: item }
+
+/*
+ FILL COLORS
+*/
+
+.fillBlue {
+    fill: blue;
+}
+
+.fillLightBlue {
+    fill: #8da0cb;
+}
+
+.fillLightRed {
+    fill: #fc8d62;
+}
+
+.fillLightGray {
+    fill: lightgray;
+}
+
+.fillRed {
+    fill: red;
+}
+
+.fillGreen {
+    fill: green;
+}
+
+.fillNone {
+    fill: none;
+}
+
+.fillWhite {
+    fill: white;
+}
+
+.fillBlack {
+    fill: black;
+}
+
+.fillLightGreen {
+    fill: mediumaquamarine;
+}
+
+.fillLightRed {
+    fill: lightpink;
+}
+
+
+
+.guiRectFlat {
+    stroke:transparent;
+    fill:transparent;
+}
+
+.guiRectToggled {
+    fill:skyblue;
+}
+
+.guiRectInactive {
+    fill:lightgray;
+}
+
+.guiRectClickable {
+    cursor:pointer;
+}
+
+.guiRectClickable:hover {
+    fill:skyblue;
+}

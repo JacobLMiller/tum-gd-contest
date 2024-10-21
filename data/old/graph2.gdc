@@ -1,0 +1,26 @@
+# Lines starting with # are comments and ignored
+# First value is the number of nodes (N)
+6
+# Next N numbers describe the node locations.
+115 18
+54 97
+121 73
+39 162
+188 47
+154 144
+# Remaining lines are the edges.
+# The first value is the source node index.
+# The second value is the target node index.
+0 1
+0 3
+0 5
+1 2
+1 4
+2 3
+2 4
+2 5
+3 4
+4 5
+# Optional: Grid dimension
+# If unspecified, it is 1000000 x 1000000
+G 200 200
